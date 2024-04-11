@@ -73,7 +73,7 @@ def generate_librimix(metadata, root_dir, dataset_dir):
             annotations.append([mixed_audio_path, clean_audio1_path, clean_audio2_path, dataset_set])
 
     annotations_df = pd.DataFrame(annotations, columns=['mixed_audio', 'target_audio1', 'target_audio2', 'set'])
-    annotations_csv_path = os.path.join(dataset_dir, 'annotations.csv')
+    annotations_csv_path = os.path.join(dataset_dir, 'CustomLibriMixed_data.csv')
     annotations_df.to_csv(annotations_csv_path, index=False)
 
 if __name__ == "__main__":

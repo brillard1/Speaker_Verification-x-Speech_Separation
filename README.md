@@ -10,8 +10,8 @@ To finetune or evaluate the models, run the below command
 ```
 python main.py {model_name} {mode}
 ```
-- The mode can be test or train (for finetuning) depending upon the requirements
-- The model name is among wave2vec2_xlsr, hubert_large or wavlm_large. The checkpoints for these can be downloaded from the [link](https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification)
+- The `model_name` is among wave2vec2_xlsr, hubert_large or wavlm_large. The checkpoints for these can be downloaded from the [link](https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification)
+- The `mode` can be test or train (for finetuning) depending upon the requirements
 
 ### Speaker Separation
 ___
@@ -24,5 +24,7 @@ python prepare.py
 
 Now for the speaker separation task, run the below command
 ```
-python main.py
+python main.py {mode} {--load}
 ```
+- Here `mode` refers to train or eval, use train for fine-tuning and eval for test results
+- Specify `--load` parameter if model weights are present in 'ckpt/best.pt'
